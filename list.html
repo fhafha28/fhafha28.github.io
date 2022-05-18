@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="/css/normalise.css"> -->
+  <link rel="stylesheet" href="css/main3.css">
+  <title>Product list</title>
+</head>
+
+<body>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+  <div class="container">
+    <button id="ascending" class="btn btn-danger">Price ascending</button>
+    <button id="nameAscending" class="btn btn-danger">Name ascending</button>
+    <button id="nameDscending" class="btn btn-danger">Name descending</button>
+    <button id="below60" class="btn btn-danger">Price below 60,000 won</button>
+    <button id="original" class="btn btn-danger">Initial list</button>
+    <div class="space"></div>
+    <form>
+      <input type="text" id="customsort">Won below
+      <button id="belowInput">Confirm</button>
+    </form>
+
+
+    <div class="space"></div>
+
+    <div class="row">
+    </div>
+
+    <button class="btn btn-danger" id="more">More</button>
+
+  </div>
+
+
+
+  <script>
+
+    var products = [
+      { id: 0, price: 70000, title: 'Blossom Dress' },
+      { id: 1, price: 50000, title: 'Springfield Shirt' },
+      { id: 2, price: 60000, title: 'Black Monastery' }
+    ];
+
+    for (let i = 0; i < products.length; i++) {
+      let innerText =
+        `<div class="col-sm-4">
+          <img src="https://via.placeholder.com/600" class="w-100">
+      <h5>${products[i].title}</h5>
+      <p>Price : ${products[i].price}</p>
+      <button class="buy">Purchase</button>`
+      $('.row').append(innerText);
+    }
+
+    $('#ascending').click(function () {
+      products.sort(function (a, b) {
+        return a.price - b.price;
+      })
+      $('.row').html('');
+      parseAdd(products);
+    })
+
+    $('#original').click(function () {
+      products.sort(function (a, b) {
+        return a.id - b.id;
+      })
+      $('.row').html('');
+      parseAdd(products);
+    })
+
+
+    $('form').on('submit', function (e) {
+      e.preventDefault();
+      let userInput = parseInt($('#customsort').val());
+      if (/\D/.test(userInput)) { alert('Please write numbers'); }
+      else if (userInput >= 0) {
+        let newProducts = products.filter(function (a) {
+          return a.price <= userInput;
+        })
+        $('.row').html('');
+        parseAdd(newProducts);
+      }
+    })
+
+
+    // console.log(input);
+
+    // $('.row').html('');
+    // parseAdd(products);
+    // })
+
+    $('#nameDscending').click(function () {
+      products.sort(function (a, b) {
+        if (a.title < b.title) return 1;
+        if (a.title > b.title) return -1;
+        if (a.title = b.title) return 0;
+      })
+      $('.row').html('');
+      parseAdd(products);
+    })
+
+    $('#nameAscending').click(function () {
+      products.sort(function (a, b) {
+        if (a.title < b.title) return -1;
+        else return 1;
+      })
+      $('.row').html('');
+      parseAdd(products);
+    })
+
+    $('#below60').click(function () {
+      let newProducts = products.filter(function (a) {
+        return a.price <= 60000;
+      })
+      $('.row').html('');
+      parseAdd(newProducts);
+    })
+
+
+    let count = 0;
+    function parseAdd(array) {
+      array.forEach(function (a, i) {
+        let innerText =
+          `<div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+              <h5>${a.title}</h5>
+              <p>Price : ${a.price}</p>
+              <button class="buy">구매</button>
+            </div>`
+        $('.row').append(innerText);
+      });
+    }
+
+    $('#more').click(function (e) {
+      if (count == 0) {
+        $.get('https://codingapple1.github.io/js/more1.json')
+          .done((data) => {
+            parseAdd(data);
+          });
+      }
+      if (count == 1) {
+        $.get('https://codingapple1.github.io/js/more2.json')
+          .done((data) => {
+            parseAdd(data)
+          });
+      } else if (count >= 2) {
+        document.querySelector('#more').style.display = 'none';
+      } count += 1;
+    })
+
+    let array이름 = [7, 3, 5, 2, 40];
+    let array이름2 = ['먀', 'a', 'ㄱ', '의'];
+    array이름.sort();
+    // [2, 3, 40, 5, 7]
+    array이름.sort(function (a, b) {
+      return a - b;
+    })
+    console.log(array이름);
+    // [2, 3, 5, 7, 40]
+
+
+
+    array이름2.sort(function (a, b) {
+      if (a < b) return 10;
+      if (a > b) return -10;
+      if (a = b) return 0;
+    });
+    console.log(array이름2);
+
+    // ['의', '먀', 'ㄱ', 'a']
+
+
+    $.get('https://codingapple1.github.io/hello.txt').done(
+      function (data) {
+        console.log('data에 받아온 data가 들어있음');
+        console.log(data);
+      }
+    )
+      .fail(function () {
+        console.log('실패함');
+      })
+    $.get('https://codingapple1.github.io/price.json').done(
+      function (data) { console.log(data) }
+    ).fail(function (error) {
+      console.log(error);
+    })
+
+    //   fetch('https://codingapple1.github.io/price.json')
+    // .then(res => res.json())
+    // .then(function(data){
+    //   console.log(data)
+    // })
+    // .catch(function(error){
+    //   console.log('실패함')
+    // });
+
+    // 구매버튼을 누르면 상품명을 로컬스토리지에 저장하기
+
+    $('.buy').click(function (e) {
+      let title = $(e.currentTarget).siblings('h5').text();
+      if (localStorage.getItem('cart') == null) {
+        localStorage.setItem('cart', JSON.stringify([title]));
+      }
+      else if (localStorage.getItem('cart') !== null) {
+        let original = JSON.parse(localStorage.cart);
+        original.push(title);
+        localStorage.setItem('cart', JSON.stringify(original));
+        console.log(original);
+      }
+    })
+
+    // 중복클릭한 항목 제거 후 상품명 로컬 스토리지에 저장하기
+    // $('.buy').click(function (e) {
+    //   let title = $(e.currentTarget).siblings('h5').text();
+    //   if (localStorage.getItem('cart') == null) {
+    //     localStorage.setItem('cart', JSON.stringify([title]));
+    //   }
+    //   else if (localStorage.getItem('cart') !== null) {
+    //     let original = JSON.parse(localStorage.cart);
+    //     let update = original.filter(s => s !== title)
+    //     update.push(title);
+    //     localStorage.setItem('cart', JSON.stringify(update));
+    //   }
+    // })
+
+    // $('.buy').click(function (e) {
+    //   let title = $(e.currentTarget).siblings('h5').text();
+    //   let obj = { "name": title, "qty": 1 }
+    //   if (localStorage.getItem('cart') == null) {
+    //     localStorage.setItem('cart', JSON.stringify([obj]));
+    //   }
+    //   else if (localStorage.getItem('cart') !== null) {
+    //     let original = JSON.parse(localStorage.cart);
+    //     for (let i = 0; i < original.length; i++) {
+    //       if (original[i].name == title) {
+    //         newQty = original[i].qty + 1
+    //         original[i] = { "name": title, "qty": newQty }
+    //       }
+    //     } localStorage.setItem('cart', JSON.stringify(original));
+    //   }
+    // }
+    // )
+
+
+  </script>
+
+
+</body>
+
+</html>
