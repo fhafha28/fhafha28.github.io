@@ -1,78 +1,103 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 
-div, input, textarea {
+div,
+input,
+textarea {
     box-sizing: border-box;
 }
-body {
-    margin:0px;
-}
-html {
-    line-height : 1.15; /*기본 행간 높이*/
-    font-family: 'Lato', sans-serif;
-  }
 
-table{
+body {
+    margin: 0px;
+}
+
+html {
+    line-height: 1.15;
+    /*기본 행간 높이*/
+    font-family: 'Lato', sans-serif;
+}
+
+table {
     border-collapse: collapse;
 }
 
-p, h4, h3, h2, h1, span{
-     transform : rotate(0.04deg); 
+p,
+h4,
+h3,
+h2,
+h1,
+span {
+    transform: rotate(0.04deg);
 }
-.white-title{
+
+.white-title {
     color: white;
     width: 90%;
     font-size: 18px;
     margin-bottom: 15px;
-    margin-top:0px;
-
+    margin-top: 0px;
 }
-.title-middle{
+
+.title-middle {
     font-size: 15px;
     font-weight: 400;
 }
-.white-content{
+
+.white-content {
     color: white;
     width: 100%;
     font-size: 14px;
     font-weight: 300;
-    
 }
-.black-title{
+
+.black-title {
     color: black;
     font-size: 18px;
     width: 100%;
     margin-bottom: 15px;
-    margin-top:0px;
+    margin-top: 0px;
     margin-right: 0px;
 }
-.black-content{
+
+.black-content {
     color: black;
     font-size: 14px;
     width: 100%;
     font-weight: 300;
 }
-.position-center{
-    display : block; 
-    margin-left : auto; 
-    margin-right : auto;
-    text-align: center; 
+
+.position-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
-.container{
+.container {
     width: 800px;
-    display : block; 
-    margin-left : auto; 
-    margin-right : auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
-.backgroun-blue{
+
+.video-box {
+    height: 500px;
     width: 100%;
-    background: linear-gradient(rgb(83, 175, 246),#3251c0);
+    overflow: hidden;
+    position: relative;
+}
+
+
+
+.backgroun-blue {
+    width: 100%;
+    background: linear-gradient(rgb(83, 175, 246), #3251c0);
     padding-top: 20px;
     padding-bottom: 40px;
     position: relative;
 
 }
-.background-white{
+
+.background-white {
     width: 100%;
     text-align: center;
     padding-top: 40px;
@@ -82,43 +107,47 @@ p, h4, h3, h2, h1, span{
     margin-bottom: 40px;
     right: auto;
     left: auto;
-    
+
 }
 
-.top-label{
+.top-label {
     margin-bottom: 0;
 }
-.bottom-label{
-    margin-top:0;
+
+.bottom-label {
+    margin-top: 0;
 }
 
-.content-left{
-    width:50%;
-    padding-left:40px;
+.content-left {
+    width: 50%;
+    padding-left: 40px;
     height: 300px;
-    float:left;
+    float: left;
 }
-.content-right{
+
+.content-right {
     width: 40%;
     height: 300px;
-    margin-right:40px;
+    margin-right: 40px;
     margin-top: 50px;
     float: right;
 }
-.content-right img{
+
+.content-right img {
     height: 300px;
     width: 275px;
 
 }
-.title{
+
+.title {
     color: white;
-    font-size: 25px;    
+    font-size: 25px;
     font-weight: 400;
     margin-bottom: 15px;
 }
 
 
-.btn-grey{
+.btn-grey {
     width: auto;
     height: 35px;
     color: white;
@@ -133,19 +162,21 @@ p, h4, h3, h2, h1, span{
 .btn-grey:hover {
     background-color: black;
 }
-.icon-container{
+
+.icon-container {
     display: flex;
     width: 75%;
     margin-top: 20px;
-    margin-left : auto; 
-    margin-right : auto;
+    margin-left: auto;
+    margin-right: auto;
     justify-content: center;
 }
-.icon-box{
+
+.icon-box {
     margin: 10px;
 }
 
-.icon-name{
+.icon-name {
     text-align: center;
     color: white;
     font-size: 15px;
@@ -156,7 +187,7 @@ p, h4, h3, h2, h1, span{
     margin-bottom: 5px;
 }
 
-.icon-box i{
+.icon-box i {
     background-color: white;
     width: 70px;
     height: 70px;
@@ -166,20 +197,20 @@ p, h4, h3, h2, h1, span{
     color: #3251c0;
     font-size: 30px;
     text-align: center;
-    display : block; 
-    margin-left : auto; 
-    margin-right : auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.section-container{
-    width:90%;
+.section-container {
+    width: 90%;
     height: 400px;
-    display : block; 
-    margin-left : auto; 
-    margin-right : auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.section-item1{
+.section-item1 {
     width: 50%;
     height: 50%;
     float: left;
@@ -190,73 +221,77 @@ p, h4, h3, h2, h1, span{
     background-repeat: no-repeat;
     background-position: center;
     transition: all, 0.5s;
-    background-image: linear-gradient( rgba(0,0,0,0.5), rgba(0,0,0,0.5) ), url(../img/portfolio-1.jpg);
-    position: relative;
-}
-.section-item2{
-    width: 50%;
-    height: 50%;
-    float: left;
-    text-align: left;
-    padding: 20px;
-    padding-top: 40px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: all, 0.5s;
-    background-image: linear-gradient( rgba(0,0,0,0.5), rgba(0,0,0,0.5) ), url(../img/portfolio-2.jpg);
-    position: relative;
-
-}
-.section-item3{
-    width: 50%;
-    height: 50%;
-    float: left;
-    text-align: left;
-    padding: 20px;
-    padding-top: 40px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: all, 0.5s;
-    background-image: linear-gradient( rgba(0,0,0,0.5), rgba(0,0,0,0.5) ), url(../img/portfolio-3.jpg);
-    position: relative;
-}
-.section-item4{
-    width: 50%;
-    height: 50%;
-    float: left;
-    text-align: left;
-    padding: 20px;
-    padding-top: 40px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: all, 0.5s;
-    background-image: linear-gradient( rgba(0,0,0,0.5), rgba(0,0,0,0.5) ), url(../img/portfolio-4.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/portfolio-1.jpg);
     position: relative;
 }
 
-.white-box{
+.section-item2 {
+    width: 50%;
+    height: 50%;
+    float: left;
+    text-align: left;
+    padding: 20px;
+    padding-top: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all, 0.5s;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/portfolio-2.jpg);
+    position: relative;
+
+}
+
+.section-item3 {
+    width: 50%;
+    height: 50%;
+    float: left;
+    text-align: left;
+    padding: 20px;
+    padding-top: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all, 0.5s;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/portfolio-3.jpg);
+    position: relative;
+}
+
+.section-item4 {
+    width: 50%;
+    height: 50%;
+    float: left;
+    text-align: left;
+    padding: 20px;
+    padding-top: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all, 0.5s;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/portfolio-4.jpg);
+    position: relative;
+}
+
+.white-box {
     position: absolute;
     width: 100%;
     height: 100%;
     z-index: 2;
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
     border: 0px solid white;
     transition: all 0.5s;
 }
-.white-box:hover{
+
+.white-box:hover {
     border: 15px solid white;
 }
 
-.overlay{
+.overlay {
     position: absolute;
     color: red;
 }
 
-.sns{
+.sns {
     background-color: #3251c0;
     width: 50px;
     height: 50px;
@@ -266,73 +301,83 @@ p, h4, h3, h2, h1, span{
     color: white;
     font-size: 20px;
     text-align: center;
-    display : block; 
-    margin-left : auto; 
-    margin-right : auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.small-container{
+.small-container {
     display: flex;
     width: 30%;
     display: flex;
     margin-top: 20px;
-    margin-left : auto; 
-    margin-right : auto;
+    margin-left: auto;
+    margin-right: auto;
     justify-content: center;
 }
-.corp{
+
+.corp {
     font-size: 13px;
     font-weight: 300;
 }
 
-@media screen and (max-width: 1200px){
-    .content-left{
+@media screen and (max-width: 1200px) {
+    .content-left {
         width: 100%;
-        padding-left:0px;
+        padding-left: 0px;
         height: 150px;
         text-align: center;
     }
-    .content-right{
+
+    .content-right {
         width: 100%;
-        margin-right:0px;
+        margin-right: 0px;
         margin-top: 0px;
         float: left;
         position: relative;
     }
-    .content-right img{
+
+    .content-right img {
         height: 270px;
         width: 245px;
         position: absolute;
-        bottom:0;
-        right: 280px;        
+        bottom: 0;
+        right: 280px;
     }
-    .section-container{
+
+    .section-container {
         width: 60%;
     }
 
-    .section-item1, .section-item2, .section-item3, .section-item4{
+    .section-item1,
+    .section-item2,
+    .section-item3,
+    .section-item4 {
         width: 100%;
-        display : block; 
-        margin-left : auto; 
-        margin-right : auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .white-box{
+    .white-box {
         width: 100%;
     }
-    .white-box:hover{
+
+    .white-box:hover {
         border: 15px solid white;
     }
 
-    .icon-container{
+    .icon-container {
         flex-direction: column;
     }
-    .icon-box p{
+
+    .icon-box p {
         width: 150px;
         text-align: center;
         margin: auto;
     }
-    .icon-title{
+
+    .icon-title {
         width: 150px;
         text-align: center;
         margin: auto;
